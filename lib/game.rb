@@ -12,5 +12,9 @@ class Game
     puts "------------"
     puts "{@board[7]} | {@board[8]} | {@board[9]}"
   end
+
+  def input_to_index(input)
+    @choose = input.to_i
+  end
    
 end
