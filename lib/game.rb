@@ -28,4 +28,8 @@ class Game
       false
     end
   end
+
+  def valid_move?(input_to_index)
+    !position_taken?(input_to_index) && @board[input_to_index]
+  end
 end
