@@ -64,13 +64,14 @@ while turns < 6
   if turns == 6
     # for now the program chooses a random winner based on the results of rand
     winner = rand(1..3)
-    if winner == 1
-      puts "#{first_player} is the winner!!"
-    elsif winner == 2
-      puts "#{second_player} is the winner!!"
+    case winner
+    when winner == 1
+      puts "#{first_player} you WIN the game!"
+    when winner == 2
+      puts "#{second_player} you WIN the game!"
     else
-      puts "Its a Tie!"
-      puts "Game over"
+      puts 'It\'s a Tie!'
+      puts 'Game over'
     end
     gets.chomp
   end
