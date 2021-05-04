@@ -16,5 +16,8 @@ class Game
   def input_to_index(input)
     @choose = input.to_i
   end
-   
+
+  def move(input_to_index, player)
+    @board[input_to_index] = player
+  end
 end
