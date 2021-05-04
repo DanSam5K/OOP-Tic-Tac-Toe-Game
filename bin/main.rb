@@ -40,7 +40,7 @@ while turns < 6
   puts '+---+---+---+'
 
   puts "Its #{current_player} turn"
-  puts 'Please select an available cell: '
+  puts 'Please select an available cell from the board (1-9): '
   if current_player == first_player
     player_1_cell = gets.chomp.to_i
     # if player inputs anything other than a number it will be equal to 0 therefore outside of the if condition
@@ -69,7 +69,7 @@ while turns < 6
     elsif winner == 2
       puts "#{second_player} is the winner!!"
     else
-      puts "the game ends in a draw!"
+      puts "Its a Tie!"
       puts "Game over"
     end
     gets.chomp
