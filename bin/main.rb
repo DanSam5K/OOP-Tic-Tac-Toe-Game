@@ -28,8 +28,8 @@ system('clear')
 
 turns = 0
 current_player = first_player
-
-while turns < 6
+max_turns = rand(5..9)
+while turns < max_turns
   # This is the current board, we are currently working on making a better looking board
   puts '+---+---+---+'
   puts '| 1 | 2 | 3 |'
@@ -38,7 +38,6 @@ while turns < 6
   puts '+---+---+---+'
   puts '| 7 | 8 | 9 |'
   puts '+---+---+---+'
-
   puts "Its #{current_player} turn"
   puts 'Please select an available cell from the board (1-9): '
   if current_player == first_player
@@ -48,7 +47,7 @@ while turns < 6
       current_player = second_player
       turns += 1
     else
-      puts 'Invalid move, please enter a number from 1-9'
+      puts 'Invalid move. Please enter a number from 1-9'
       gets.chomp
     end
   else
@@ -61,18 +60,30 @@ while turns < 6
       gets.chomp
     end
   end
-  if turns == 6
+  if turns >= max_turns
     # for now the program chooses a random winner based on the results of rand
-    winner = rand(1..3)
-    case winner
-    when winner == 1
-      puts "#{first_player} you WIN the game!"
-    when winner == 2
-      puts "#{second_player} you WIN the game!"
-    else
+    tie = rand(1..2)
+    current_player = if current_player == first_player
+                       second_player
+                     else
+                       first_player
+                     end
+    system('clear')
+    puts '+---+---+---+'
+    puts '| 1 | 2 | 3 |'
+    puts '+---+---+---+'
+    puts '| 4 | 5 | 6 |'
+    puts '+---+---+---+'
+    puts '| 7 | 8 | 9 |'
+    puts '+---+---+---+'
+    # If max_turns equal to 9 the program will check if the tie value is equal to 1, in that case the game will be a tie
+    if max_turns == 9 && tie == 1
       puts 'It\'s a Tie!'
       puts 'Game over'
+    else
+      puts "#{current_player} you WIN the game!"
     end
+
     gets.chomp
   end
   system('clear')
