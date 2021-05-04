@@ -20,4 +20,12 @@ class Game
   def move(input_to_index, player)
     @board[input_to_index] = player
   end
+
+  def position_taken?(input_to_index)
+    if @board[input_to_index] == "X"  || @board[input_to_index] == "O"
+      true
+    else
+      false
+    end
+  end
 end
