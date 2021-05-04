@@ -47,7 +47,6 @@ while turns < 6
     if player_1_cell.positive? && player_1_cell < 10
       current_player = second_player
       turns += 1
-
     else
       puts 'Invalid move, please enter a number from 1-9'
       gets.chomp
