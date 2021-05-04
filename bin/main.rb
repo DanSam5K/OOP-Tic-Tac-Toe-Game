@@ -24,3 +24,18 @@ puts "#{player_1} will use X while #{player_2} will use O."
 
 puts "Lets start! (Press enter to continue)"
 gets.chomp
+system("clear")
+
+turns=0
+current_player=player_1 
+
+while turns<6
+  #This is the current board, we are currently working on making a better looking board
+  puts "+---+---+---+"
+  puts "| 1 | 2 | 3 |"
+  puts "+---+---+---+"
+  puts "| 4 | 5 | 6 |"
+  puts "+---+---+---+"
+  puts "| 7 | 8 | 9 |"
+  puts "+---+---+---+"
+  
