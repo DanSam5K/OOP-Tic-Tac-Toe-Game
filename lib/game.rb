@@ -44,4 +44,16 @@ class Game
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
+
+  def turn
+    puts"Whats your choice user?"
+    choice = gets.strip
+    index = input_to_index(choice)
+    if valid_move?(index)
+      move(index, current_player)
+      display_board
+    else
+      turn
+    end
+  end
 end
