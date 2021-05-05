@@ -8,9 +8,52 @@ class Game
 
   end
   WIN_COMBINATION_TEMP = [[1, 2, 3], [1, 4, 7], [2, 5, 8], [3, 6, 9], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7]]
-  WIN_COMBINATION = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-  
 
+  
+ def choices (val) 
+  @board.each_with_index do |val,index|
+    if val == "X" 
+      if player_1.selections.all? {|x| x!=index}
+     player_1.choice(index)
+    end
+    elsif val=="O"
+      if player_2.selections.all? {|x| x!=index}
+     player_2.choice(index)
+    end
+    end
+   end
+  end
+  def win?
+    win_combo = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+    
+       win_combo.each do |arr|
+        win_array_1=[]
+        win_array_2=[]
+        arr.each do |i|
+          unless player_1.selections==nil
+            player_1.selections.each do |choice|
+              if i==choice
+              win_array_1.push(i)
+              end
+            end
+          end
+          unless player_2.selections==nil
+            player_2.selections.each do |choice|
+              if i==choice
+              win_array_2.push(i)
+              end
+            end
+          end
+          end
+        if win_array_1.length==3 || win_array_2.length==3
+          p player_1.selections
+          p player_2.selections
+          gets.chomp
+          return true  
+        end
+       end
+       false
+    end
   
   def display_board
     d_board= " #{@board[0]} | #{@board[1]} | #{@board[2]} \n"+

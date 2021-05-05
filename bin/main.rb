@@ -33,7 +33,7 @@ system('clear')
 current_player = new_game.player_1.name
 turns=0
 max_turns = 6
-while turns < max_turns
+until new_game.win?
   # This is the current board, we are currently working on making a better looking board
   puts new_game.display_board
   puts "Its #{new_game.current_player} turn"
@@ -42,36 +42,19 @@ while turns < max_turns
     # if player inputs anything other than a number it will be equal to 0 therefore outside of the if condition
     if new_game.valid_move?(input)
       new_game.turn(input)
-turns+=1
+      new_game.choices(input)
+
     else
       puts 'Invalid move. Please enter an available number from 1-9'
       gets.chomp
     end
  
-  if turns >= max_turns
+  if new_game.win?
     # for now the program chooses a random winner based on the results of rand
-    tie = rand(1..2)
-    current_player = if current_player == new_game.player_1.name
-      new_game.player_2.name
-                     else
-                      new_game.player_1.name
-                     end
     system('clear')
-    puts '+---+---+---+'
-    puts '| 1 | 2 | 3 |'
-    puts '+---+---+---+'
-    puts '| 4 | 5 | 6 |'
-    puts '+---+---+---+'
-    puts '| 7 | 8 | 9 |'
-    puts '+---+---+---+'
+    puts new_game.display_board
     # If max_turns equal to 9 the program will check if the tie value is equal to 1, in that case the game will be a tie
-    if max_turns == 9 && tie == 1
-      puts 'It\'s a Tie!'
-      puts 'Game over'
-    else
-      puts "#{current_player} you WIN the game!"
-    end
-
+    puts "#{new_game.current_player} you WIN the game!"
     gets.chomp
   end
   system('clear')
