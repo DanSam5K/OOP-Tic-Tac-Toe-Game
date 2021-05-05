@@ -1,72 +1,60 @@
 #!/usr/bin/env ruby
-first_player = ''
-second_player = ''
+require './lib/player.rb'
+require './lib/game.rb'
+new_game=Game.new
 puts 'Welcome to Ruby Tic-Tac-Toe! '
-while first_player == ''
+#get name section
+while new_game.player_1.name == ''
   puts 'Enter player 1 name: '
-  first_player = gets.chomp
-  next unless first_player == ''
+  new_game.player_1.name = gets.chomp
+  next unless new_game.player_1.name == ''
 
   puts 'Please enter a name for Player 1 (press enter to continue)'
   gets.chomp
   system('clear')
 end
-while second_player == ''
+
+while new_game.player_2.name == ''
   puts 'Enter player 2 name: '
-  second_player = gets.chomp
-  next unless second_player == ''
+  new_game.player_2.name = gets.chomp
+  next unless new_game.player_2.name == ''
 
   puts 'Please enter a name for Player 2 (press enter to continue)'
   gets.chomp
   system('clear')
 end
-puts "#{first_player} will use X while #{second_player} will use O."
+puts "#{new_game.player_1.name} will use X while #{new_game.player_2.name} will use O."
+
 
 puts 'Lets start! (Press enter to continue)'
 gets.chomp
 system('clear')
-
-turns = 0
-current_player = first_player
-max_turns = rand(5..9)
+#end get name section
+current_player = new_game.player_1.name
+turns=0
+max_turns = 1
 while turns < max_turns
   # This is the current board, we are currently working on making a better looking board
-  puts '+---+---+---+'
-  puts '| 1 | 2 | 3 |'
-  puts '+---+---+---+'
-  puts '| 4 | 5 | 6 |'
-  puts '+---+---+---+'
-  puts '| 7 | 8 | 9 |'
-  puts '+---+---+---+'
-  puts "Its #{current_player} turn"
+  puts new_game.display_board
+  puts "Its #{new_game.current_player} turn"
   puts 'Please select an available cell from the board (1-9): '
-  if current_player == first_player
-    player_1_cell = gets.chomp.to_i
+    input=new_game.input_to_index(gets.chomp)
     # if player inputs anything other than a number it will be equal to 0 therefore outside of the if condition
-    if player_1_cell.positive? && player_1_cell < 10
-      current_player = second_player
-      turns += 1
+    if new_game.valid_move?(input)
+      new_game.turn
+
     else
-      puts 'Invalid move. Please enter a number from 1-9'
+      puts 'Invalid move. Please enter an available number from 1-9'
       gets.chomp
     end
-  else
-    player_2_cell = gets.chomp.to_i
-    if player_2_cell.positive? && player_2_cell < 10
-      current_player = first_player
-      turns += 1
-    else
-      puts 'Invalid move, please enter a number from 1-9'
-      gets.chomp
-    end
-  end
+ 
   if turns >= max_turns
     # for now the program chooses a random winner based on the results of rand
     tie = rand(1..2)
-    current_player = if current_player == first_player
-                       second_player
+    current_player = if current_player == new_game.player_1.name
+      new_game.player_2.name
                      else
-                       first_player
+                      new_game.player_1.name
                      end
     system('clear')
     puts '+---+---+---+'

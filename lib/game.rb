@@ -1,7 +1,11 @@
 require './lib/player.rb'
 class Game
+  attr_accessor :player_1, :player_2
   def initialize
     @board = [1,2,3,4,5,6,7,8,9]
+    @player_1=Player.new("","X")
+    @player_2=Player.new("","O")
+
   end
   WIN_COMBINATION_TEMP = [[1, 2, 3], [1, 4, 7], [2, 5, 8], [3, 6, 9], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7]]
   WIN_COMBINATION = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
@@ -31,8 +35,8 @@ class Game
     end
   end
 
-  def valid_move?(input_to_index)
-    !position_taken?(input_to_index) && @board[input_to_index]
+  def valid_move? (input_to_index)
+  return if !position_taken?(input_to_index) && @board(input_to_index) 
   end
 
   def turn_count
@@ -44,18 +48,16 @@ class Game
   end
 
   def current_player
-    turn_count % 2 == 0 ? "X" : "O"
+    turn_count % 2 == 0 ? player_1.name : player_2.name
+  end
+
+  def current_player_sign
+    turn_count % 2 == 0 ? player_1.sign : player_2.sign
   end
 
   def turn
-    puts"Whats your choice user?"
-    choice = gets.strip
-    index = input_to_index(choice)
-    if valid_move?(index)
-      move(index, current_player)
+      move(index, current_player_sign)
       display_board
-    else
-      turn
-    end
+    
   end
 end
