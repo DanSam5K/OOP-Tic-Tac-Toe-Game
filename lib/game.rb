@@ -1,24 +1,26 @@
-require './player.rb'
+require './lib/player.rb'
 class Game
-  def initialize()
-    @board = Player.new(9, " ")
+  def initialize
+    @board = [1,2,3,4,5,6,7,8,9]
   end
-  WIN_COMBINATION = [[1, 2, 3], [1, 4, 7], [2, 5, 8], [3, 6, 9], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7]]
+  WIN_COMBINATION_TEMP = [[1, 2, 3], [1, 4, 7], [2, 5, 8], [3, 6, 9], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7]]
+  WIN_COMBINATION = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
   
   def display_board
-    puts " #{@board[1]} | #{@board[2]} | #{@board[3]} "
-    puts "------------"
-    puts " #{@board[4]} | #{@board[5]} | #{@board[5]} "
-    puts "------------"
-    puts " #{@board[7]} | #{@board[8]} | #{@board[9]} "
+    d_board= " #{@board[0]} | #{@board[1]} | #{@board[2]} \n"+
+     "------------\n"+
+     " #{@board[3]} | #{@board[4]} | #{@board[5]} \n"+
+     "------------\n"+
+     " #{@board[6]} | #{@board[7]} | #{@board[8]} \n"
   end
 
   def input_to_index(input)
-    @choose = input.to_i
+    @choose = input.to_i-1
   end
 
-  def move(input_to_index, player)
-    @board[input_to_index] = player
+  def move(input_to_index, player_sign)
+    @board[input_to_index] = player_sign #"x""o"
   end
 
   def position_taken?(input_to_index)
