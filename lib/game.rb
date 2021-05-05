@@ -23,6 +23,7 @@ class Game
     end
    end
   end
+
   def win?
     win_combo = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     
@@ -46,13 +47,14 @@ class Game
           end
           end
         if win_array_1.length==3 || win_array_2.length==3
-          p player_1.selections
-          p player_2.selections
-          gets.chomp
           return true  
         end
        end
        false
+    end
+
+    def tie?
+    turn_count>8 && !win?
     end
   
   def display_board
@@ -92,6 +94,10 @@ class Game
 
   def current_player
     turn_count % 2 == 0 ? player_1.name : player_2.name
+  end
+
+  def other_player
+    turn_count % 2 == 1 ? player_1.name : player_2.name
   end
 
   def current_player_sign

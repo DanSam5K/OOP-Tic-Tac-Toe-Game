@@ -33,7 +33,7 @@ system('clear')
 current_player = new_game.player_1.name
 turns=0
 max_turns = 6
-until new_game.win?
+until new_game.win? || new_game.tie?
   # This is the current board, we are currently working on making a better looking board
   puts new_game.display_board
   puts "Its #{new_game.current_player} turn"
@@ -54,7 +54,14 @@ until new_game.win?
     system('clear')
     puts new_game.display_board
     # If max_turns equal to 9 the program will check if the tie value is equal to 1, in that case the game will be a tie
-    puts "#{new_game.current_player} you WIN the game!"
+    puts "#{new_game.other_player} you WIN the game!"
+    gets.chomp
+  elsif new_game.tie?
+    system('clear')
+    puts new_game.display_board
+    # If max_turns equal to 9 the program will check if the tie value is equal to 1, in that case the game will be a tie
+    puts "It's a TIE"
+    puts "GAME OVER!"
     gets.chomp
   end
   system('clear')
