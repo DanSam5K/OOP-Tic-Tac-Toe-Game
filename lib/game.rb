@@ -59,7 +59,7 @@ class Game
   end
 
   def move(input_to_index, player_sign)
-    @board[input_to_index] = player_sign # "x""o"
+    @board[input_to_index] = player_sign
   end
 
   def position_taken?(input_to_index)
