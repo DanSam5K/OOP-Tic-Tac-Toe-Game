@@ -32,7 +32,7 @@ system('clear')
 #end get name section
 current_player = new_game.player_1.name
 turns=0
-max_turns = 1
+max_turns = 6
 while turns < max_turns
   # This is the current board, we are currently working on making a better looking board
   puts new_game.display_board
@@ -41,8 +41,8 @@ while turns < max_turns
     input=new_game.input_to_index(gets.chomp)
     # if player inputs anything other than a number it will be equal to 0 therefore outside of the if condition
     if new_game.valid_move?(input)
-      new_game.turn
-
+      new_game.turn(input)
+turns+=1
     else
       puts 'Invalid move. Please enter an available number from 1-9'
       gets.chomp
