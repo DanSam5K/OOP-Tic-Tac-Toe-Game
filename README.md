@@ -34,20 +34,20 @@ Here is an example of a game where x is the winner
 
 To get a local copy of the repository please run the following commands on your terminal:
 
+- First Go to the folder where you want to store the app and run the following command from your terminal
 ```
-$ cd <folder>
+$ git clone https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game.git to clone the repository
+```
+```
+$ cd <folder> The clone project folder
 ```
 
-```
-$ git clone https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game.git
-```
+To Run game
 
-Testing
-
-To test the code and start the game, run bin/main.rb file from your terminal.
+- To start and run the game, run "bin/main.rb" file from your terminal.
 
 ```bash
-$ bin/main.rb
+$ bin/main.rb to run the game
 ```
 
 ## Authors
@@ -55,7 +55,7 @@ $ bin/main.rb
 👤 **Daniel Samuel**
 
 - GitHub: [@DanSam5K](https://github.com/DanSam5K)
-- Twitter: [@\_dan_sam](https://twitter.com/_dan_sam)
+- Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
 - LinkedIn: [DanSam](https://www.linkedin.com/in/dansamuel/)
 
 👤 **Mario Rodriguez**
