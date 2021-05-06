@@ -3,21 +3,21 @@ require './lib/player'
 require './lib/game'
 new_game = Game.new
 puts 'Welcome to Ruby Tic-Tac-Toe! '
-while new_game.player1.name == '' || new_game.contains_letter(new_game.player1.name)==nil
+while new_game.player1.name == '' || new_game.contains_letter(new_game.player1.name).nil?
   puts 'Enter player 1 name: '
   new_game.player1.name = gets.chomp
-  
-  next unless new_game.player1.name == '' || new_game.contains_letter(new_game.player1.name)==nil
+
+  next unless new_game.player1.name == '' || new_game.contains_letter(new_game.player1.name).nil?
 
   puts 'Please enter a valid name for Player 1 (press enter to continue)'
   gets.chomp
   system('clear')
 end
 
-while new_game.player2.name == '' || new_game.contains_letter(new_game.player2.name)==nil
+while new_game.player2.name == '' || new_game.contains_letter(new_game.player2.name).nil?
   puts 'Enter player 2 name: '
   new_game.player2.name = gets.chomp
-  next unless new_game.player2.name == ''  || new_game.contains_letter(new_game.player2.name)==nil
+  next unless new_game.player2.name == '' || new_game.contains_letter(new_game.player2.name).nil?
 
   puts 'Please enter a valid name for Player 2 (press enter to continue)'
   gets.chomp
