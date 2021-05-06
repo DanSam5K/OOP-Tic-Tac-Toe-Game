@@ -41,7 +41,9 @@ class Game
     false
   end
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-
+  def contains_letter(name)
+    name=~ /[a-z]/
+  end
   def tie?
     turn_count > 8 && !win?
   end
