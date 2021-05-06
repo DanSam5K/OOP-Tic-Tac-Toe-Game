@@ -19,6 +19,9 @@ After running in the terminal the command "bin/main.rb" to launch the game, foll
 5. To win the game, the player must have a series of consecutive signs that can be, 3 consecutive horizontal cells, 3 consecutive vertical cells or either of the 2 diagonals
 6. If no other moves are available and a win condition is not met, the game will end as a tie.
 
+Here is an example of a game where x is the winner
+![](C:\Users\DELL\Documents\GitHub\Ruby\OOP-Tic-Tac-Toe-Game\images\Tic-tac-toe-animated.gif)
+
 ## Built With
 
 - Ruby
