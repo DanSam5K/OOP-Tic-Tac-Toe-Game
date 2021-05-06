@@ -20,6 +20,7 @@ After running in the terminal the command "bin/main.rb" to launch the game, foll
 6. If no other moves are available and a win condition is not met, the game will end as a tie.
 
 Here is an example of a game where x is the winner
+
 ![](images/Tic-tac-toe-animated.gif)
 
 ## Built With
