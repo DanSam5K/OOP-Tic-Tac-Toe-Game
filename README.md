@@ -6,17 +6,17 @@ A tic-tac-toe game was built to be played on the command line where two human pl
 
 ### Main Objective
 
-In this project, we built a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
+In this project, we built a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object-Oriented Programming. Particularly, classes and access to their attributes.
 
-## Game Intructions
+## Game Instructions
 
-After running in the terminal the command "bin/main.rb" to launch the game, follow the next steps:
+To run the game run the following command in the terminal "bin/main.rb", then follow the next steps:
 
 1. First Player should put their name (Only numbers are not allowed as names)
 2. Second Player should put their name (Only numbers are not allowed as names)
-3. Now first player can pick a number from 1 to 9 as displayed on the board, followed by second player
+3. Now the first player can pick a number from 1 to 9 as displayed on the board, followed by the second player
 4. Each of the players will take turns picking available numbers until a win condition is met
-5. To win the game, the player must have a series of consecutive signs that can be, 3 consecutive horizontal cells, 3 consecutive vertical cells or either of the 2 diagonals
+5. To win the game, the player must have a series of consecutive signs that can be, 3 consecutive horizontal cells, 3 consecutive vertical cells, or either of the 2 diagonals
 6. If no other moves are available and a win condition is not met, the game will end as a tie.
 
 Here is an example of a game where x is the winner
@@ -28,23 +28,45 @@ Here is an example of a game where x is the winner
 - Ruby
 - Git workflow best practice
 - Gem Rubocop
-- Github workflow practices to fix linters errors
+- Github workflow practices to fix linter errors
 
 ## Getting Started
 
-To get a local copy of the repository please run the following commands on your terminal:
+To get a local copy of the repository please follow the next steps (Examples are shown using git bash, to install git bash go to https://git-scm.com/downloads and install according to the version of your computer):
+
+- Go to the GitHub page where the repository is (Link example: https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game)
+
+- On the repository page, click on the green code button
+
+![](images\readmepic1.JPG)
+
+- Then click on the paste icon to copy the clone link
+
+![](images\readmepic2.JPG)
+
+- If you have git bash install, simply navigate to the folder where you want to copy the repository
+
+- Once in the folder, right-click on the folder and select git bash here
+
+- It should open a terminal window, to check that you are in the right place run the following command
 
 ```
-$ cd <folder>
+$ ls
 ```
+
+It should show the files that are in that folder
+
+- After you verified that you are at the right place, run this command to clone the repository in your local machine
 
 ```
 $ git clone https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game.git
 ```
 
+This should create a clone of the repository in your desired folder, from there, just open the folder from your desired code editor to check, modify or test the code
+
 Testing
 
-To test the code and start the game, run bin/main.rb file from your terminal.
+To test the code and start the game, run "bin/main.rb" from your terminal.
 
 ```bash
 $ bin/main.rb
