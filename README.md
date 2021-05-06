@@ -1,13 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # OOP TIC TAC TOE GAME
+A tic-tac-toe game was built to be played on the command line where two human players can play against each other and the board is displayed in between turns.
 
+### Main Objective
+In this project, we built a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 ## Game Intructions
 
 
 ## Built With
 - Ruby
+- Git workflow best practice
+- Gem Rubocop
+- Github workflow practices to fix linters errors
 
 
 ## Getting Started
@@ -19,7 +25,7 @@ $ cd <folder>
 ```
 
 ```
-$ git clone https://github.com/DanSam5K/project-2-enumerable-methods.git
+$ git clone https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game.git
 ```
 
 Testing
@@ -38,17 +44,17 @@ $ bin/main.rb
 - Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
 - LinkedIn: [DanSam](https://www.linkedin.com/in/dansamuel/)
 
-👤 ****
+👤 **Mario Rodriguez**
 
-- GitHub: []()
+- GitHub: [@mariordgez](https://github.com/mariordgez)
 - Twitter: []()
-- LinkedIn: []()
+- LinkedIn: [Mario](https://www.linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DanSam5K//issues).
+Feel free to check the [issues page](https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game/issues).
 
 ## Show your support
 
