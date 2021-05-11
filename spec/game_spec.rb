@@ -112,6 +112,16 @@ describe Game do
         expect(inplay.input_to_index("1")).to eql(0)
       end
     end
+
+    describe "#move" do
+      it "should detect the next player to make a move" do
+        expect(inplay.move(0, "X")).to eql("X")
+      end
+
+      it "should detect the next player to make a move" do
+        expect(inplay.move(1, "O")).to eql("O")
+      end
+    end
 end
 
 
