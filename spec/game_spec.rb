@@ -122,6 +122,13 @@ describe Game do
         expect(inplay.move(1, "O")).to eql("O")
       end
     end
+    
+    describe "#position_taken?" do
+      it "should detect position" do
+        expect(inplay.position_taken?(0)).to eql(true)
+      end
+    end
+
 end
 
 
