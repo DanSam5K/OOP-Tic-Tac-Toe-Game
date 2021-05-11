@@ -129,6 +129,13 @@ describe Game do
       end
     end
 
+    describe "#valid_move?" do
+      it "should detect move validity" do
+        expect(inplay.valid_move?(0)).to eql(false)
+      end
+    end
+
+
 end
 
 
