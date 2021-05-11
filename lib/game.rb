@@ -67,7 +67,7 @@ class Game
   end
 
   def valid_move?(input_to_index)
-    !position_taken?(input_to_index) && @board[input_to_index] && input_to_index >= 0 ? true : false
+    !position_taken?(input_to_index) && @board[input_to_index] && input_to_index >= 0
   end
 
   def turn_count
