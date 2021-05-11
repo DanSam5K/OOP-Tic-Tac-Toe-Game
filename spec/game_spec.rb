@@ -1,4 +1,5 @@
 require './lib/game'
+require './lib/player'
  
 describe Game do
     inplay = Game.new()
@@ -134,7 +135,56 @@ describe Game do
         expect(inplay.valid_move?(0)).to eql(false)
       end
     end
+    
+    game_2 = Game.new
 
+    describe "#current_player" do
+      game_2.player1.name = "Tom"
+      game_2.player2.name = "Harry"
+      it "should return the name of player1" do
+        game_2.move(0, "X")
+        game_2.choices
+        game_2.turn_count
+        expect(game_2.current_player).to eql(game_2.player2.name)
+      end
+
+      it "should return the name of player2" do
+        game_2.move(1, "O")
+        game_2.choices
+        game_2.turn_count
+        expect(game_2.current_player).to eql(game_2.player1.name)
+      end
+    end
+
+    describe "#other_player" do
+      game_2.player1.name = "Tom"
+      game_2.player2.name = "Harry"
+      it "should return the name of player1" do
+        game_2.move(2, "X")
+        game_2.choices
+        game_2.turn_count
+        expect(game_2.other_player).to eql(game_2.player1.name)
+      end
+
+      it "should return the name of player2" do
+        game_2.move(3, "O")
+        game_2.choices
+        game_2.turn_count
+        expect(game_2.other_player).to eql(game_2.player2.name)
+      end
+    end
+
+    describe "#turn" do
+      it "should display the board with updated moves" do
+        expect(game_2.turn(0)).to eql(
+            " X | O | X \n" \
+            "------------\n" \
+            " O | #{5} | #{6} \n" \
+            "------------\n" \
+            " #{7} | #{8} | #{9} \n"
+        )
+      end
+    end
 
 end
 
