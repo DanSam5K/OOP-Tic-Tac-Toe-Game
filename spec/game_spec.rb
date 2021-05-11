@@ -11,23 +11,58 @@ describe Game do
 
     describe "#win?" do
       it "returns true as first row is marked X" do
-        inplay.move(0, "X")
-        inplay.move(1, "X")
-        inplay.move(2, "X")
+        inplay.move(0, "O" || "X")
+        inplay.move(1, "O" || "X")
+        inplay.move(2, "O" || "X")
         inplay.choices
         expect(inplay.win?).to eql(true)
       end
       it "returns true as second row is marked X" do
-        inplay.move(3, "X")
-        inplay.move(4, "X")
-        inplay.move(5, "X")
+        inplay.move(3, "X" || "O")
+        inplay.move(4, "X" || "O")
+        inplay.move(5, "X" || "O")
         inplay.choices
         expect(inplay.win?).to eql(true)
       end
       it "returns true as third row is marked X" do
-        inplay.move(6, "X")
-        inplay.move(7, "X")
-        inplay.move(8, "X")
+        inplay.move(6, "X" || "O")
+        inplay.move(7, "X" || "O")
+        inplay.move(8, "X" || "O")
+        inplay.choices
+        expect(inplay.win?).to eql(true)
+      end
+      it "returns true as third row is marked X" do
+        inplay.move(0, "X" || "O")
+        inplay.move(3, "X" || "O")
+        inplay.move(6, "X" || "O")
+        inplay.choices
+        expect(inplay.win?).to eql(true)
+      end
+      it "returns true as third row is marked X" do
+        inplay.move(1, "X" || "O")
+        inplay.move(4, "X" || "O")
+        inplay.move(7, "X" || "O")
+        inplay.choices
+        expect(inplay.win?).to eql(true)
+      end
+      it "returns true as third row is marked X" do
+        inplay.move(2, "X" || "O")
+        inplay.move(5, "X" || "O")
+        inplay.move(8, "X" || "O")
+        inplay.choices
+        expect(inplay.win?).to eql(true)
+      end
+      it "returns true as third row is marked X" do
+        inplay.move(0, "X" || "O")
+        inplay.move(4, "X" || "O")
+        inplay.move(8, "X" || "O")
+        inplay.choices
+        expect(inplay.win?).to eql(true)
+      end
+      it "returns true as third row is marked X" do
+        inplay.move(2, "X" || "O")
+        inplay.move(4, "X" || "O")
+        inplay.move(6, "X" || "O")
         inplay.choices
         expect(inplay.win?).to eql(true)
       end
