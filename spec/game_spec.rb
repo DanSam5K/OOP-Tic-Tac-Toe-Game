@@ -141,50 +141,55 @@ describe Game do
     end
   end
 
-  game_two = Game.new
-
   describe '#current_player' do
-    game_two.player1.name = 'Tom'
-    game_two.player2.name = 'Harry'
+    let(:inplay) {Game.new}
     it 'should return the name of player1' do
-      game_two.move(0, 'X')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.current_player).to eql(game_two.player2.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(0, 'X')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.current_player).to eql(inplay.player2.name)
     end
 
     it 'should return the name of player2' do
-      game_two.move(1, 'O')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.current_player).to eql(game_two.player1.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(1, 'O')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.current_player).to eql(inplay.player2.name)
     end
   end
 
   describe '#other_player' do
-    game_two.player1.name = 'Tom'
-    game_two.player2.name = 'Harry'
+    let(:inplay) {Game.new}
     it 'should return the name of player1' do
-      game_two.move(2, 'X')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.other_player).to eql(game_two.player1.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(2, 'X')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.other_player).to eql(inplay.player1.name)
     end
 
     it 'should return the name of player2' do
-      game_two.move(3, 'O')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.other_player).to eql(game_two.player2.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(3, 'O')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.other_player).to eql(inplay.player1.name)
     end
   end
 
   describe '#turn' do
+    let(:inplay) {Game.new}
     it 'should display the board with updated moves' do
-      expect(game_two.turn(0)).to eql(
-        " X | O | X \n" \
+      expect(inplay.turn(0)).to eql(
+        " X | 2 | 3 \n" \
         "------------\n" \
-        " O | 5 | 6 \n" \
+        " 4 | 5 | 6 \n" \
         "------------\n" \
         " 7 | 8 | 9 \n"
       )
