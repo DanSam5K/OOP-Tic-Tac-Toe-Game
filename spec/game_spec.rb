@@ -130,14 +130,14 @@ describe Game do
   describe '#position_taken?' do
     let(:inplay) {Game.new}
     it 'should detect position' do
-      expect(inplay.position_taken?(0)).to eql(true)
+      expect(inplay.position_taken?(0)).to eql(false)
     end
   end
 
   describe '#valid_move?' do
     let(:inplay) {Game.new}
     it 'should detect move validity' do
-      expect(inplay.valid_move?(0)).to eql(false)
+      expect(inplay.valid_move?(0)).to eql(true)
     end
   end
 
