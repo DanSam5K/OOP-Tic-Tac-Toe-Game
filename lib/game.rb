@@ -1,4 +1,4 @@
-require './lib/player'
+require_relative '../lib/player'
 class Game
   attr_accessor :player1, :player2
 
