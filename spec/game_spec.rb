@@ -2,8 +2,6 @@ require './lib/game'
 require './lib/player'
 
 describe Game do
-  # inplay = Game.new
-
   describe '#display_board' do
     let(:inplay) {Game.new}
     it 'should display number from 1-9' do
@@ -108,7 +106,7 @@ describe Game do
       inplay.turn_count
       inplay.turn_count
       inplay.choices
-      expect(inplay.tie?).to eql(false)
+      expect(inplay.tie?).to eql(true)
     end
   end
   describe '#input_to_index' do
