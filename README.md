@@ -29,6 +29,7 @@ Here is an example of a game where x is the winner
 - Git workflow best practice
 - Gem Rubocop
 - Github workflow practices to fix linter errors
+- Rspec TDD
 
 ## Getting Started
 
@@ -64,13 +65,21 @@ $ git clone https://github.com/DanSam5K/OOP-Tic-Tac-Toe-Game.git
 
 This should create a clone of the repository in your desired folder, from there, just open the folder from your desired code editor to check, modify or test the code
 
-Testing
+#### Run code
 
-To test the code and start the game, run "bin/main.rb" from your terminal.
+To run code and start the game, run "bin/main.rb" from your terminal.
 
-```bash
+```
 $ bin/main.rb
 ```
+#### Testing With Rspec
+- Test cases have been written carefully to make sure the public methods works as expected
+- From the Terminal run the command
+```
+$ rspec
+```
+And see all test pass.
+
 
 ## Authors
 
@@ -85,6 +94,12 @@ $ bin/main.rb
 - GitHub: [@mariordgez](https://github.com/mariordgez)
 - Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
 - LinkedIn: [Mario](https://www.linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205/)
+
+👤 **Yuvraj Manoo**
+
+- GitHub: [@YuvrajM108](https://github.com/YuvrajM108)
+- Twitter: [@YM](https://twitter.com)
+- LinkedIn: [Yuvraj](https://www.linkedin.com/in/yuvraj-manoo-2711a91b0/)
 
 ## 🤝 Contributing
 
