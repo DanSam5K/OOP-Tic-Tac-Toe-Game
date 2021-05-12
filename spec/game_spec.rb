@@ -2,9 +2,10 @@ require './lib/game'
 require './lib/player'
 
 describe Game do
-  inplay = Game.new
+  # inplay = Game.new
 
   describe '#display_board' do
+    let(:inplay) {Game.new}
     it 'should display number from 1-9' do
       expect(inplay.display_board).to eql(
         " 1 | 2 | 3 \n" \
@@ -17,6 +18,7 @@ describe Game do
   end
 
   describe '#choices' do
+    let(:inplay) {Game.new}
     it 'should display available choices' do
       inplay.move(1, 'X')
       expect(inplay.choices).to eql([1, 'X', 3, 4, 5, 6, 7, 8, 9])
@@ -24,6 +26,7 @@ describe Game do
   end
 
   describe '#win?' do
+    let(:inplay) {Game.new}
     it 'returns true as first row is marked X' do
       inplay.move(0, 'O' || 'X')
       inplay.move(1, 'O' || 'X')
@@ -83,6 +86,7 @@ describe Game do
   end
 
   describe '#tie?' do
+    let(:inplay) {Game.new}
     it 'should display true if all board position is taken' do
       inplay.move(0, 'X')
       inplay.turn_count
@@ -108,12 +112,14 @@ describe Game do
     end
   end
   describe '#input_to_index' do
+    let(:inplay) {Game.new}
     it 'should convert user input to index' do
       expect(inplay.input_to_index('1')).to eql(0)
     end
   end
 
   describe '#move' do
+    let(:inplay) {Game.new}
     it 'should detect the next player to make a move' do
       expect(inplay.move(0, 'X')).to eql('X')
     end
@@ -124,12 +130,14 @@ describe Game do
   end
 
   describe '#position_taken?' do
+    let(:inplay) {Game.new}
     it 'should detect position' do
       expect(inplay.position_taken?(0)).to eql(true)
     end
   end
 
   describe '#valid_move?' do
+    let(:inplay) {Game.new}
     it 'should detect move validity' do
       expect(inplay.valid_move?(0)).to eql(false)
     end
