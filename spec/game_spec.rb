@@ -3,7 +3,7 @@ require_relative '../lib/player'
 
 describe Game do
   describe '#display_board' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should display number from 1-9' do
       expect(inplay.display_board).to eql(
         " 1 | 2 | 3 \n" \
@@ -16,7 +16,7 @@ describe Game do
   end
 
   describe '#choices' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should display available choices' do
       inplay.move(1, 'X')
       expect(inplay.choices).to eql([1, 'X', 3, 4, 5, 6, 7, 8, 9])
@@ -24,7 +24,7 @@ describe Game do
   end
 
   describe '#win?' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'returns true as first row is marked X' do
       inplay.move(0, 'O' || 'X')
       inplay.move(1, 'O' || 'X')
@@ -84,7 +84,7 @@ describe Game do
   end
 
   describe '#tie?' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should display true if all board position is taken' do
       inplay.move(0, 'X')
       inplay.turn_count
@@ -110,14 +110,14 @@ describe Game do
     end
   end
   describe '#input_to_index' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should convert user input to index' do
       expect(inplay.input_to_index('1')).to eql(0)
     end
   end
 
   describe '#move' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should detect the next player to make a move' do
       expect(inplay.move(0, 'X')).to eql('X')
     end
@@ -128,63 +128,68 @@ describe Game do
   end
 
   describe '#position_taken?' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should detect position' do
       expect(inplay.position_taken?(0)).to eql(false)
     end
   end
 
   describe '#valid_move?' do
-    let(:inplay) {Game.new}
+    let(:inplay) { Game.new }
     it 'should detect move validity' do
       expect(inplay.valid_move?(0)).to eql(true)
     end
   end
 
-  game_two = Game.new
-
   describe '#current_player' do
-    game_two.player1.name = 'Tom'
-    game_two.player2.name = 'Harry'
+    let(:inplay) { Game.new }
     it 'should return the name of player1' do
-      game_two.move(0, 'X')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.current_player).to eql(game_two.player2.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(0, 'X')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.current_player).to eql(inplay.player2.name)
     end
 
     it 'should return the name of player2' do
-      game_two.move(1, 'O')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.current_player).to eql(game_two.player1.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(1, 'O')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.current_player).to eql(inplay.player2.name)
     end
   end
 
   describe '#other_player' do
-    game_two.player1.name = 'Tom'
-    game_two.player2.name = 'Harry'
+    let(:inplay) { Game.new }
     it 'should return the name of player1' do
-      game_two.move(2, 'X')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.other_player).to eql(game_two.player1.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(2, 'X')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.other_player).to eql(inplay.player1.name)
     end
 
     it 'should return the name of player2' do
-      game_two.move(3, 'O')
-      game_two.choices
-      game_two.turn_count
-      expect(game_two.other_player).to eql(game_two.player2.name)
+      inplay.player1.name = 'Tom'
+      inplay.player2.name = 'Harry'
+      inplay.move(3, 'O')
+      inplay.choices
+      inplay.turn_count
+      expect(inplay.other_player).to eql(inplay.player1.name)
     end
   end
 
   describe '#turn' do
+    let(:inplay) { Game.new }
     it 'should display the board with updated moves' do
-      expect(game_two.turn(0)).to eql(
-        " X | O | X \n" \
+      expect(inplay.turn(0)).to eql(
+        " X | 2 | 3 \n" \
         "------------\n" \
-        " O | 5 | 6 \n" \
+        " 4 | 5 | 6 \n" \
         "------------\n" \
         " 7 | 8 | 9 \n"
       )
