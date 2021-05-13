@@ -1,4 +1,4 @@
-require './lib/player'
+require_relative '../lib/player'
 class Game
   attr_accessor :player1, :player2
 
@@ -71,7 +71,7 @@ class Game
   end
 
   def valid_move?(input_to_index)
-    return true if !position_taken?(input_to_index) && @board[input_to_index] && input_to_index >= 0
+    !position_taken?(input_to_index) && @board[input_to_index] && input_to_index >= 0
   end
 
   def turn_count
