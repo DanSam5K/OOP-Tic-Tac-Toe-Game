@@ -2,7 +2,7 @@
 
 # OOP TIC TAC TOE GAME
 
-A tic-tac-toe game was built to be played on the command line where two human players can play against each other and the board is displayed in between turns.
+Tic-tac-toe game was built to be played on the command line where two players can play against each other and the board is displayed in between turns.
 
 ### Main Objective
 
@@ -26,7 +26,7 @@ Here is an example of a game where x is the winner
 ## Built With
 
 - Ruby
-- Git workflow best practice
+- Git workflow best practices
 - Gem Rubocop
 - Github workflow practices to fix linter errors
 - Rspec TDD
